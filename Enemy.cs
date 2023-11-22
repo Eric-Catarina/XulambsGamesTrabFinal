@@ -8,31 +8,32 @@ namespace TrabFinalLoud
 {
     internal class Enemy
     {
-        protected int hp;
+        public Enemy(){
+        }
+        protected int hp = 30;
 
         public int Hp { get { return hp; } 
             set { hp = value; } 
         }
 
         //implementar parametros e returns quando implementados
-        /*
-        public int TakeDamage(value: int)
+        
+        public int TakeDamage(int value)
         {
-
-
+            hp -= value;
+            return value;
         }
 
         public int GetHp()
         {
-
-
+            Console.WriteLine("Vida do goblin: " + hp);
+            return hp;
         }
 
         public bool Died()
         {
-
-
-        }*/
+            return hp > 0;
+        }
 
     }
 }

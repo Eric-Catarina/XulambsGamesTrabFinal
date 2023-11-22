@@ -10,7 +10,14 @@ namespace TrabFinalLoud
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Pog foi");
+            Enemy goblin = new Enemy();
+            Paladin paladino = new Paladin();
+            Sword espada = new Sword();
+            paladino.equipWeapon(espada);
+            goblin.GetHp();
+            paladino.attack(goblin);
+            goblin.GetHp();
+
         }
     }
 }

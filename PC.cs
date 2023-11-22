@@ -9,11 +9,9 @@ namespace TrabFinalLoud
     internal abstract class PC
     {
         protected int strenght;
-        //descomentar quando Weapon for implementada
-        //protected Weapon weapon;
-        protected string id;
-        //descomentar quando Item for implementada
-        //List<int> inventory;
+        protected Weapon weapon;
+        protected string? id;
+        List<Item>? inventory;
 
         public int Strenght {  get { return strenght; } 
             set { strenght = value; } 
@@ -24,7 +22,7 @@ namespace TrabFinalLoud
         }
 
         //implementar parametros e returns quando implementados
-       /* public void attack(other:Enemy)
+        public void attack(Enemy other)
         {
 
         }
@@ -35,17 +33,26 @@ namespace TrabFinalLoud
             return id;
         }
 
-        public bool EquipWeapon(WeakReference:Weapon)
-        {
+        public bool equipWeapon(Weapon w){
+            if (w.type ==Weapon.WeaponType.Sword && strenght > w.weight){
+                weapon = w;
+                strenght += weapon.strenght;
+                return true;
+            }
+            if (w.type == Weapon.WeaponType.Dagger || w.type == Weapon.WeaponType.Bow){
+                weapon = w;
+                strenght += weapon.strenght;
+                return true;
+            }
 
-            
+            return false;
         }
 
-        public void UseItem(IDisposable:int)
+        public void UseItem(int pos)
         {
 
 
-        }*/
+        }
 
     }
 }
