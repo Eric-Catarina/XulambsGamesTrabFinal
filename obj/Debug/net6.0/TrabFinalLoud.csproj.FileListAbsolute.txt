@@ -1,0 +1,15 @@
+D:\Users\1460909\Documents\projects\TrabFinalLoud\bin\Debug\net6.0\TrabFinalLoud.exe
+D:\Users\1460909\Documents\projects\TrabFinalLoud\bin\Debug\net6.0\TrabFinalLoud.deps.json
+D:\Users\1460909\Documents\projects\TrabFinalLoud\bin\Debug\net6.0\TrabFinalLoud.runtimeconfig.json
+D:\Users\1460909\Documents\projects\TrabFinalLoud\bin\Debug\net6.0\TrabFinalLoud.dll
+D:\Users\1460909\Documents\projects\TrabFinalLoud\bin\Debug\net6.0\TrabFinalLoud.pdb
+D:\Users\1460909\Documents\projects\TrabFinalLoud\obj\Debug\net6.0\TrabFinalLoud.csproj.AssemblyReference.cache
+D:\Users\1460909\Documents\projects\TrabFinalLoud\obj\Debug\net6.0\TrabFinalLoud.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\1460909\Documents\projects\TrabFinalLoud\obj\Debug\net6.0\TrabFinalLoud.AssemblyInfoInputs.cache
+D:\Users\1460909\Documents\projects\TrabFinalLoud\obj\Debug\net6.0\TrabFinalLoud.AssemblyInfo.cs
+D:\Users\1460909\Documents\projects\TrabFinalLoud\obj\Debug\net6.0\TrabFinalLoud.csproj.CoreCompileInputs.cache
+D:\Users\1460909\Documents\projects\TrabFinalLoud\obj\Debug\net6.0\TrabFinalLoud.dll
+D:\Users\1460909\Documents\projects\TrabFinalLoud\obj\Debug\net6.0\refint\TrabFinalLoud.dll
+D:\Users\1460909\Documents\projects\TrabFinalLoud\obj\Debug\net6.0\TrabFinalLoud.pdb
+D:\Users\1460909\Documents\projects\TrabFinalLoud\obj\Debug\net6.0\TrabFinalLoud.genruntimeconfig.cache
+D:\Users\1460909\Documents\projects\TrabFinalLoud\obj\Debug\net6.0\ref\TrabFinalLoud.dll
