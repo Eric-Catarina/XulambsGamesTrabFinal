@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TrabFinalLoud{
-    internal class Sword : Weapon{
+    internal class Bow : Weapon{
         WeaponType type;
-        public Sword(){
-            type = WeaponType.Sword;
-            strenght = 10;
+        public Bow(){
+            type = WeaponType.Bow;
+            strenght = 5;
         }
-        public int weight = 5;
+        public int range = 5;
 
     }
 }

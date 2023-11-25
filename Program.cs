@@ -14,8 +14,10 @@ namespace TrabFinalLoud
             Enemy goblin = new Enemy(paladino);
 
             Sword espada = new Sword();
+            Bow arcoDoSukuna = new Bow();
             espada.use(paladino);
-            
+            arcoDoSukuna.use(paladino);
+
             CritGloves luvasDeCritico = new CritGloves();
             luvasDeCritico.equipItem(paladino);
             StrenghtGloves luvasDeDano = new StrenghtGloves();

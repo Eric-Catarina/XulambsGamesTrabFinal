@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace TrabFinalLoud
 {
-    internal abstract class Active : Item, IUsable
+    internal abstract class CritPotion : Active
     {
 
         public enum ItemType{
             StrenghtPotion,
             CritPotion,
         }
-        public ItemType itemType;
         public bool canBeUsedUsed(PC who)
         {
             return true;
@@ -21,7 +20,7 @@ namespace TrabFinalLoud
 
         public void use(PC player)
         {
-            
+            player.critChance += 30f;
         }
     }
 }
