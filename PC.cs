@@ -6,12 +6,23 @@ using System.Threading.Tasks;
 
 namespace TrabFinalLoud
 {
-    internal abstract class PC
+    internal abstract class PC : IObservador
     {
         protected int strenght;
-        protected Weapon weapon;
+        public float critChance;
+        public Weapon weapon;
         protected string? id;
         List<Item>? inventory;
+
+        public static Action<PC> OnHit;
+
+        public enum CharacterType{
+            Paladino,
+            Elfo
+        }
+        public CharacterType charType;
+
+
 
         public int Strenght {  get { return strenght; } 
             set { strenght = value; } 
@@ -54,5 +65,10 @@ namespace TrabFinalLoud
 
         }
 
+        public void Avisar(IInimigoObservado personagem)
+        {
+            Console.WriteLine("O PC está ciente que o inimigo morreu");
+        }
+        
     }
 }

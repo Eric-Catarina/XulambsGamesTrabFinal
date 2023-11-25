@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TrabFinalLoud{
-    internal abstract class Weapon{
+    internal abstract class Weapon : IUsable{
         public enum WeaponType{
             Dagger,
             Sword,
@@ -16,5 +16,19 @@ namespace TrabFinalLoud{
         public int weight;
         public int strenght;
 
+        public void use(PC player)
+        {
+            if (canBeUsedUsed(player)){
+                player.weapon = this;
+            }
+        }
+
+        public bool canBeUsedUsed(PC who)
+        {
+            if (who.charType == PC.CharacterType.Elfo && type == WeaponType.Dagger){
+                return false;
+            }
+            return true;
+        }
     }
 }

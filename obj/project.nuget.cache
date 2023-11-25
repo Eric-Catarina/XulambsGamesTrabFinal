@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "iczD5W67GXdxdA7Qn5htC3QeHOW4x8SoDhpWnDDJsIC4Lt4vR3UW9QSpFjlZjlhc2tPexf6497zDgbogbf2rCg==",
+  "dgSpecHash": "/z4vLrbSwgLBmRfdumEJDCeQIndFK3zHjxt2thdfGQgKuj18NmoXRw3E9oJoDbBCvluMZAKTu52tUnfiTbPpBw==",
   "success": true,
-  "projectFilePath": "D:\\Users\\1460909\\Documents\\projects\\TrabFinalLoud\\TrabFinalLoud.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/eric/projects/XulambsGamesTrabFinal/TrabFinalLoud.csproj",
+  "expectedPackageFiles": [
+    "/home/eric/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.24/microsoft.netcore.app.host.linux-x64.6.0.24.nupkg.sha512"
+  ],
   "logs": []
 }

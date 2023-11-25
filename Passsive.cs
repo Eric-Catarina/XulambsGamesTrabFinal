@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace TrabFinalLoud
 {
-    internal abstract class Item
+    internal abstract class Passive : Item
     {
         
-        protected int strength;
-        protected string? id;
 
-
-        public string getID(){
-            return id;
-        }
     }
 }

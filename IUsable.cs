@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace TrabFinalLoud
 {
-    internal abstract class Item
+    internal interface IUsable
     {
+        void use(PC player);
         
-        protected int strength;
-        protected string? id;
-
-
-        public string getID(){
-            return id;
-        }
+        bool canBeUsedUsed(PC  who);
+      
     }
 }

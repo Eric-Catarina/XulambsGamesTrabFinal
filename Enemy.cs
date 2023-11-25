@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace TrabFinalLoud
 {
-    internal class Enemy
+    class Enemy : IInimigoObservado
     {
-        public Enemy(){
+        public Enemy(PC jogador){
+            RegistrarObservador(jogador);
         }
+        private IObservador player;
         protected int hp = 30;
 
         public int Hp { get { return hp; } 
@@ -21,6 +23,9 @@ namespace TrabFinalLoud
         public int TakeDamage(int value)
         {
             hp -= value;
+            if (hp <= 0){
+                Died();
+            }
             return value;
         }
 
@@ -32,8 +37,20 @@ namespace TrabFinalLoud
 
         public bool Died()
         {
-            return hp > 0;
+            if (hp <=0){
+                NotificarPersonagens();
+            }
+            return hp <= 0;
         }
 
+        public void RegistrarObservador(IObservador observador)
+        {
+            player = observador;
+        }
+
+        public void NotificarPersonagens()
+        {
+            player.Avisar(this);
+        }
     }
 }
