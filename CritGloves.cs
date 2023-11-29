@@ -8,7 +8,7 @@ namespace TrabFinalLoud
 {
     class CritGloves : Passive
     {
-        public float critChance = 20.0f;
+        public float critChance = 80.0f;
         public void equipItem(PC player){
             player.critChance += critChance;
         }

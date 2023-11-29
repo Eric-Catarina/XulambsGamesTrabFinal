@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabFinalLoud
 {
-    internal abstract class StrenghtPotion : Active
+    internal class StrenghtPotion : Active
     {
 
         public enum ItemType{
@@ -20,7 +20,7 @@ namespace TrabFinalLoud
 
         public void use(PC player)
         {
-            player.Strenght += 5;
+            player.Strenght += 20;
         }
     }
 }

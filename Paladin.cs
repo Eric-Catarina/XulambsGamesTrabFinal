@@ -10,7 +10,7 @@ namespace TrabFinalLoud{
             charType = CharacterType.Paladino;
         }
         public void attack(Enemy other){
-            if (other.Died()){
+            if (other.GetHp() <= 0){
                 return;
             }
             var random = new Random();

@@ -12,25 +12,30 @@ namespace TrabFinalLoud
         {
             Paladin paladino = new Paladin();
             Enemy goblin = new Enemy(paladino);
+            StrenghtPotion strenghtPotion = new StrenghtPotion();
+
 
             Sword espada = new Sword();
             Bow arcoDoSukuna = new Bow();
             espada.use(paladino);
             arcoDoSukuna.use(paladino);
 
+            strenghtPotion.use(paladino);
+
             CritGloves luvasDeCritico = new CritGloves();
             luvasDeCritico.equipItem(paladino);
             StrenghtGloves luvasDeDano = new StrenghtGloves();
             luvasDeDano.equipItem(paladino);
 
-            goblin.GetHp();
+            goblin.ShowHp();  
             paladino.attack(goblin);
-            goblin.GetHp();
+            goblin.ShowHp();  
             paladino.attack(goblin);
-            goblin.GetHp();
-            paladino.attack(goblin);
-            goblin.GetHp();
-
+            goblin.ShowHp();  
+            if (goblin.GetHp() >= 0){
+                paladino.attack(goblin);
+                goblin.ShowHp();  
+            }
 
         }
     }

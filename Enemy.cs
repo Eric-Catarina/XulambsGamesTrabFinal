@@ -31,15 +31,18 @@ namespace TrabFinalLoud
 
         public int GetHp()
         {
-            Console.WriteLine("Vida do goblin: " + hp);
             return hp;
+        }
+
+        public void ShowHp(){
+            Console.WriteLine("O goblin está com " + hp + " de vida.");
         }
 
         public bool Died()
         {
-            if (hp <=0){
-                NotificarPersonagens();
-            }
+            Console.WriteLine("Morreu");
+            NotificarPersonagens();
+            
             return hp <= 0;
         }
 
