@@ -28,3 +28,11 @@ D:/Users/1460909/Documents/projects/TrabFinalLoud/obj/Debug/net6.0/ref/TrabFinal
 /home/eric/projects/XulambsGamesTrabFinal/obj/Debug/net6.0/TrabFinalLoud.pdb
 /home/eric/projects/XulambsGamesTrabFinal/obj/Debug/net6.0/TrabFinalLoud.genruntimeconfig.cache
 /home/eric/projects/XulambsGamesTrabFinal/obj/Debug/net6.0/ref/TrabFinalLoud.dll
+D:\Users\1431964\Desktop\XulambsGamesTrabFinal\obj\Debug\net6.0\TrabFinalLoud.csproj.AssemblyReference.cache
+D:\Users\1431964\Desktop\XulambsGamesTrabFinal\obj\Debug\net6.0\TrabFinalLoud.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\1431964\Desktop\XulambsGamesTrabFinal\obj\Debug\net6.0\TrabFinalLoud.AssemblyInfoInputs.cache
+D:\Users\1431964\Desktop\XulambsGamesTrabFinal\obj\Debug\net6.0\TrabFinalLoud.AssemblyInfo.cs
+D:\Users\1431964\Desktop\XulambsGamesTrabFinal\obj\Debug\net6.0\TrabFinalLoud.csproj.CoreCompileInputs.cache
+D:\Users\1431964\Desktop\XulambsGamesTrabFinal\obj\Debug\net6.0\TrabFinalLoud.dll
+D:\Users\1431964\Desktop\XulambsGamesTrabFinal\obj\Debug\net6.0\refint\TrabFinalLoud.dll
+D:\Users\1431964\Desktop\XulambsGamesTrabFinal\obj\Debug\net6.0\TrabFinalLoud.pdb

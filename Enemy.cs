@@ -12,7 +12,7 @@ namespace TrabFinalLoud
             RegistrarObservador(jogador);
         }
         private IObservador player;
-        protected int hp = 30;
+        protected int hp = 80;
 
         public int Hp { get { return hp; } 
             set { hp = value; } 

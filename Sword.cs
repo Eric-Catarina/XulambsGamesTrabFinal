@@ -11,7 +11,7 @@ namespace TrabFinalLoud{
             type = WeaponType.Sword;
             strenght = 10;
         }
-        public int weight = 5;
+        public int weight = 5000;
 
     }
 }

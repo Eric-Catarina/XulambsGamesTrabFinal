@@ -20,7 +20,7 @@ namespace TrabFinalLoud
             espada.use(paladino);
             arcoDoSukuna.use(paladino);
 
-            strenghtPotion.use(paladino);
+            //strenghtPotion.use(paladino);
 
             CritGloves luvasDeCritico = new CritGloves();
             luvasDeCritico.equipItem(paladino);
