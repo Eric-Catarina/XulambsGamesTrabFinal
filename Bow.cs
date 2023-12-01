@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace TrabFinalLoud{
     internal class Bow : Weapon{
-        WeaponType type;
         public Bow(){
             type = WeaponType.Bow;
             strenght = 5;

@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TrabFinalLoud{
-    internal class Paladin: PC{
-        public Paladin(){
-            strenght = 10;
-            charType = CharacterType.Paladino;
+    internal class Elf: PC{
+
+        public Elf(){
+            strenght = 5;
+            charType = CharacterType.Elfo;
         }
+        public int agilityBonus;
         public void attack(Enemy other){
             if (other.GetHp() <= 0){
                 return;

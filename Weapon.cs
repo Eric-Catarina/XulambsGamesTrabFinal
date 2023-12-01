@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace TrabFinalLoud{
     internal abstract class Weapon : IUsable{
         public enum WeaponType{
-            Dagger,
             Sword,
-            Bow
+            Bow,
+            Dagger
         }
 
         public WeaponType type;
@@ -26,6 +26,7 @@ namespace TrabFinalLoud{
         public bool canBeUsedUsed(PC who)
         {
             if (who.charType == PC.CharacterType.Elfo && type == WeaponType.Dagger){
+                Console.WriteLine("Elfos não podem usar adagas");
                 return false;
             }
             return true;

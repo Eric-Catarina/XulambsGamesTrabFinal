@@ -45,18 +45,44 @@ namespace TrabFinalLoud
         }
 
         public bool equipWeapon(Weapon w){
-            if (w.type ==Weapon.WeaponType.Sword && strenght > w.weight){
-                weapon = w;
-                strenght += weapon.strenght;
+            if (w.type == Weapon.WeaponType.Sword && strenght > w.weight){
+                switchWeapon(w);
+            
+                Console.WriteLine("Você equipou a espada com sucesso");
                 return true;
             }
-            if (w.type == Weapon.WeaponType.Dagger || w.type == Weapon.WeaponType.Bow){
-                weapon = w;
-                strenght += weapon.strenght;
+
+            else if (w.type == Weapon.WeaponType.Sword && strenght < w.weight){
+                Console.WriteLine("Essa espada é pesada demais para você");
+                return false;
+            }
+
+            if (w.type == Weapon.WeaponType.Bow){
+                Console.WriteLine("Você equipou o arco com sucesso");
+                switchWeapon(w);
+                return true;
+            }
+
+            if (w.type == Weapon.WeaponType.Dagger  && charType == CharacterType.Elfo){
+                Console.WriteLine("Elfos não podem usar adagas");
+                return false;
+            }
+
+            else if (w.type == Weapon.WeaponType.Dagger && charType != CharacterType.Elfo){
+                Console.WriteLine("Você equipou a adaga com sucesso");
+                switchWeapon(w);
                 return true;
             }
 
             return false;
+        }
+
+        private void switchWeapon(Weapon w){
+            if (weapon != null){
+                strenght -= weapon.strenght;
+            }
+            weapon = w;
+            strenght += weapon.strenght;
         }
 
         public void UseItem(int pos)
