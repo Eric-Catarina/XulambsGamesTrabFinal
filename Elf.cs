@@ -8,24 +8,14 @@ namespace TrabFinalLoud{
     internal class Elf: PC{
 
         public Elf(){
+            maxHp = 150;
+            hp = maxHp;
             strenght = 5;
             charType = CharacterType.Elfo;
+            
         }
         public int agilityBonus;
-        public void attack(Enemy other){
-            if (other.GetHp() <= 0){
-                return;
-            }
-            var random = new Random();
-            if (random.Next(1,100) < critChance){
-                other.TakeDamage(strenght * 2);
-                Console.WriteLine("Acerto Critico!!"  + strenght * 2);
-            }
-            else{
-                other.TakeDamage(strenght);
-            }
-        }
-
+ 
 
     }
 }

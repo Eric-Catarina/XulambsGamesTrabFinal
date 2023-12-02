@@ -12,10 +12,10 @@ namespace TrabFinalLoud
         {
             
             PC player = SelectClass();
-            Weapon armaAtual = SelectWeapon();
+            Weapon armaAtual = SelectWeapon(player);
+            player.PedirAcao();
             
-            player.equipWeapon(armaAtual);
-
+            
             // Sword espada = new Sword();
             // Bow arcoDoSukuna = new Bow();
             // espada.use(paladino);
@@ -70,7 +70,7 @@ namespace TrabFinalLoud
 
         }
 
-        static Weapon SelectWeapon(){
+        public static Weapon SelectWeapon(PC player){
             Console.WriteLine("Escolha sua arma: ");
             Console.WriteLine("1 - Espada \n2 - Arco \n3 - Adaga");
             Weapon arma = null;
@@ -84,16 +84,22 @@ namespace TrabFinalLoud
                     arma = new Bow();
                     break;
                 case "3":
-                    Console.WriteLine(input);
                     arma = new Dagger();
                     break;
                 default:
                     Console.WriteLine("Escolha inválida");
-                    return SelectWeapon();
+                    return SelectWeapon(player);
             }
-            return arma;
-
+            Console.Clear();
+            if (player.equipWeapon(arma)){
+                return arma;
+            }
+            else{
+                return SelectWeapon(player);
+            }
         }
+
+        
 
     }
 }

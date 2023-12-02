@@ -8,7 +8,7 @@ namespace TrabFinalLoud
 {
     internal abstract class Item
     {
-        
+        public string name;
         protected int strength;
         protected string? id;
 

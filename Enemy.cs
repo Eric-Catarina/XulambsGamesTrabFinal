@@ -12,7 +12,7 @@ namespace TrabFinalLoud
             RegistrarObservador(jogador);
         }
         private IObservador player;
-        protected int hp = 80;
+        protected int hp = 130, maxHp = 130;
 
         public int Hp { get { return hp; } 
             set { hp = value; } 
@@ -26,6 +26,9 @@ namespace TrabFinalLoud
             if (hp <= 0){
                 Died();
             }
+            else{
+                ShowHp();
+            }
             return value;
         }
 
@@ -35,12 +38,12 @@ namespace TrabFinalLoud
         }
 
         public void ShowHp(){
-            Console.WriteLine("O goblin está com " + hp + " de vida.");
+            Console.WriteLine("O goblin agora está com " + hp + "/" + maxHp + " de vida.");
         }
 
         public bool Died()
         {
-            Console.WriteLine("Morreu");
+            Console.WriteLine("O inimigo atual morreu, indo para o próximo inimigo");
             NotificarPersonagens();
             
             return hp <= 0;

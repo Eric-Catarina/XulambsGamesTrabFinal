@@ -8,9 +8,14 @@ namespace TrabFinalLoud
 {
     class StrenghtGloves : Passive
     {
+        public StrenghtGloves(){
+            name = "Luvas de força";
+            id = "strenghtGloves";
+        }
         public int strenghtBonus = 5;
         public void equipItem(PC player){
             player.Strenght += strenghtBonus;
+            Console.WriteLine("Luvas de força Equipado");
         }
 
 
