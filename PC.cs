@@ -13,7 +13,7 @@ namespace TrabFinalLoud
         public Weapon weapon;
         public Enemy? enemy;
         protected string? id;
-        List<Item>? inventory;
+        public List<Item>? inventory = new List<Item>();
 
         public static Action<PC> OnHit;
 
@@ -38,7 +38,7 @@ namespace TrabFinalLoud
             set { id = value; }
         }
 
-        //implementar parametros e returns quando implementados
+
         public void attack(Enemy other)
         {
             if (other == null)
@@ -119,34 +119,87 @@ namespace TrabFinalLoud
             strenght += weapon.strenght;
         }
 
-        public void UseItem(int pos)
+        public void UseItem()
         {
+            Console.WriteLine("Escolha um dos itens do inventário abaixo para usar(use o índice)");
+            ShowInventory();
+            string input = Console.ReadLine();
+            int index = 0;
+            if (int.TryParse(input, out index))
+            {
+                if (index > inventory.Count)
+                {
+                    Console.WriteLine("Escolha inválida");
+                    return;
+                }
+                if (inventory[index].type == Item.ItemType.StrenghtGloves)
+                {
+                    inventory[index] = new StrenghtGloves();
+                    StrenghtGloves luvas = (StrenghtGloves)inventory[index];
+                    luvas.equipItem(this);
+                    inventory.RemoveAt(index);
+                    return;
+                }
 
+                if (inventory[index].type == Item.ItemType.CritGloves)
+                {
+                    inventory[index] = new CritGloves();
+                    CritGloves luvas = (CritGloves)inventory[index];
+                    luvas.equipItem(this);
+                    inventory.RemoveAt(index);
+                    return;
+                }
+
+                if (inventory[index].type == Item.ItemType.StrenghtPotion)
+                {
+                    inventory[index] = new StrenghtPotion();
+                    StrenghtPotion potion = (StrenghtPotion)inventory[index];
+                    potion.use(this);
+                    inventory.RemoveAt(index);
+                    return;
+                }
+
+                if (inventory[index].type == Item.ItemType.CritPotion)
+                {
+                    inventory[index] = new CritPotion();
+                    CritPotion potion = (CritPotion)inventory[index];
+                    potion.use(this);
+                    inventory.RemoveAt(index);
+                    return;
+                }
+
+                inventory[index].use(this);
+                inventory.RemoveAt(index);
+            }
+            else
+            {
+                Console.WriteLine("Escolha inválida");
+            }
 
         }
 
         public void Avisar(IInimigoObservado personagem)
         {
-            Console.WriteLine("O PC está ciente que o inimigo morreu");
+            Console.WriteLine("O PC está ciente que o inimigo morreu💀");
         }
 
         public void ShowStats()
         {
-            Console.WriteLine("Força: " + strenght);
-            Console.WriteLine("Chance de acerto crítico: " + critChance);
-            Console.WriteLine("HP: " + hp + "/" + maxHp);
-            Console.WriteLine("Arma equipada: " + weapon.type);
+            Console.WriteLine("Força💪: " + strenght);
+            Console.WriteLine("Chance de acerto crítico🩸: " + critChance);
+            Console.WriteLine("HP❤️: " + hp + "/" + maxHp);
+            Console.WriteLine("Arma equipada⚔️: " + weapon.type);
         }
 
         public void PedirAcao()
         {
             Console.WriteLine("O que você deseja fazer?");
             Console.WriteLine("1 - Atacar 🗡️🗡️🗡️");
-            Console.WriteLine("2 - Usar item");
-            Console.WriteLine("3 - Ver status");
-            Console.WriteLine("4 - Ver inventário");
-            Console.WriteLine("5 - Equipar arma");
-            Console.WriteLine("6 - Sair(Fechar o jogo)");
+            Console.WriteLine("2 - Usar item🧪");
+            Console.WriteLine("3 - Ver status👨‍⚕️");
+            Console.WriteLine("4 - Ver inventário🎒");
+            Console.WriteLine("5 - Equipar arma⚔️");
+            Console.WriteLine("6 - Sair❌(Fechar o jogo)");
             string input = Console.ReadLine();
             Console.Clear();
             ExecutarAcao(input);
@@ -161,7 +214,7 @@ namespace TrabFinalLoud
                     PedirAcao();
                     break;
                 case "2":
-                    UseItem(0);
+                    UseItem();
                     PedirAcao();
                     break;
                 case "3":
@@ -174,6 +227,7 @@ namespace TrabFinalLoud
                     break;
                 case "5":
                     Program.SelectWeapon(this);
+                    PedirAcao();
                     break;
                 case "6":
                     Environment.Exit(0);

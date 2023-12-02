@@ -12,9 +12,33 @@ namespace TrabFinalLoud
         protected int strength;
         protected string? id;
 
+        public enum ItemType{
+            CritGloves,
+            StrenghtGloves,
+            StrenghtPotion,
+            CritPotion,
+
+        }
+
+        public ItemType type;
+
+        public void use(PC player)
+        {
+            Console.WriteLine("Tentou usar pelo ITEM");
+        }        
+        
+        public void equipItem(PC player)
+        {
+            Console.WriteLine("Tentou equipar pelo ITEM");
+        }
 
         public string getID(){
             return id;
+        }
+
+        public bool canBeUsedUsed(PC who)
+        {
+            throw new NotImplementedException();
         }
     }
 }

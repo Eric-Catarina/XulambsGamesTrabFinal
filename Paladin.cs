@@ -11,6 +11,11 @@ namespace TrabFinalLoud{
             hp = maxHp;
             strenght = 10;
             charType = CharacterType.Paladino;
+            StrenghtPotion strenghtPotion = new StrenghtPotion();
+            StrenghtGloves strenghtGloves = new StrenghtGloves();
+
+            inventory.Add(strenghtGloves);
+            inventory.Add(strenghtPotion);
         }
 
     }

@@ -8,6 +8,11 @@ namespace TrabFinalLoud
 {
     internal class StrenghtPotion : Active
     {
+        public StrenghtPotion()
+        {
+            type = Item.ItemType.StrenghtPotion;
+            name = "Poção de Força💪";
+        }
 
         public enum ItemType{
             StrenghtPotion,
@@ -20,6 +25,7 @@ namespace TrabFinalLoud
 
         public void use(PC player)
         {
+            Console.WriteLine("Poção de Força usada, +20 de força");
             player.Strenght += 20;
         }
     }

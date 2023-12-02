@@ -12,7 +12,9 @@ namespace TrabFinalLoud{
             hp = maxHp;
             strenght = 5;
             charType = CharacterType.Elfo;
-            
+
+            CritGloves critGloves = new CritGloves();
+            CritPotion critPotion = new CritPotion();
         }
         public int agilityBonus;
  

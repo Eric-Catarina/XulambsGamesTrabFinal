@@ -8,9 +8,10 @@ namespace TrabFinalLoud
 {
     class CritGloves : Passive
     {
-        public float critChance = 80.0f;
+        public float critChance = 30.0f;
         public CritGloves(){
-            name = "Luvas de Critico";
+            type = ItemType.CritGloves;
+            name = "Luvas de Critico🥊🩸";
             id = "CritGloves";
         }
         public void equipItem(PC player){

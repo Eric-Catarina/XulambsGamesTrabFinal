@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace TrabFinalLoud
 {
-    internal abstract class CritPotion : Active
+    internal class CritPotion : Active
     {
 
-        public enum ItemType{
-            StrenghtPotion,
-            CritPotion,
+        public CritPotion(){
+            type = Item.ItemType.CritPotion;
+            name = "Poção de Crítico🩸";
         }
+       
         public bool canBeUsedUsed(PC who)
         {
             return true;
@@ -20,6 +21,7 @@ namespace TrabFinalLoud
 
         public void use(PC player)
         {
+            Console.WriteLine("Poção de Crítico usada, +30% de chance de crítico");
             player.critChance += 30f;
         }
     }

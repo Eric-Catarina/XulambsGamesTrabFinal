@@ -9,7 +9,8 @@ namespace TrabFinalLoud
     class StrenghtGloves : Passive
     {
         public StrenghtGloves(){
-            name = "Luvas de força";
+            type = ItemType.StrenghtGloves;
+            name = "Luvas de força🥊💪";
             id = "strenghtGloves";
         }
         public int strenghtBonus = 5;
