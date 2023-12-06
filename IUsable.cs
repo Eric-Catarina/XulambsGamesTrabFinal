@@ -11,6 +11,5 @@ namespace TrabFinalLoud
         void use(PC player);
         
         bool canBeUsedUsed(PC  who);
-      
     }
 }

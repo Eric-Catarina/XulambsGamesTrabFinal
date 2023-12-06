@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace TrabFinalLoud
 {
-    internal abstract class Active : Item, IUsable
+    internal class HealthPotion : Active
     {
 
-        public enum ItemType{
-            StrenghtPotion,
-            CritPotion,
-            HealthPotion,
-            
-
+        public HealthPotion()
+        {
+            type = Item.ItemType.HealthPotion;
+            name = "Poção De Cura🩸";
         }
-        public ItemType itemType;
+       
         public bool canBeUsedUsed(PC who)
         {
             return true;
@@ -24,7 +22,8 @@ namespace TrabFinalLoud
 
         public void use(PC player)
         {
-            
+            Console.WriteLine("Poção de Cura usada, recuperou +30% de saude");
+            player.hp += 30f;
         }
     }
 }

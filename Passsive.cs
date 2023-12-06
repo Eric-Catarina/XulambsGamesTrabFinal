@@ -9,6 +9,5 @@ namespace TrabFinalLoud
     internal abstract class Passive : Item
     {
         
-
     }
 }

@@ -10,6 +10,5 @@ namespace TrabFinalLoud
     {
         void RegistrarObservador(IObservador observador);
         void NotificarPersonagens();
-
     }
 }

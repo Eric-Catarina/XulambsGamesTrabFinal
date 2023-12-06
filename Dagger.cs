@@ -10,6 +10,5 @@ namespace TrabFinalLoud{
             type = WeaponType.Dagger;
             strenght = 5;
         }
-
     }
 }

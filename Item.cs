@@ -17,6 +17,7 @@ namespace TrabFinalLoud
             StrenghtGloves,
             StrenghtPotion,
             CritPotion,
+            HealthPotion,
 
         }
 

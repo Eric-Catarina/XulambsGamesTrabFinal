@@ -17,6 +17,7 @@ namespace TrabFinalLoud
         public enum ItemType{
             StrenghtPotion,
             CritPotion,
+        
         }
         public bool canBeUsedUsed(PC who)
         {

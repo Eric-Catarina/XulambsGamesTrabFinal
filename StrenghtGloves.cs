@@ -18,7 +18,5 @@ namespace TrabFinalLoud
             player.Strenght += strenghtBonus;
             Console.WriteLine("Luvas de força Equipado");
         }
-
-
     }
 }

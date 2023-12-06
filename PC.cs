@@ -8,6 +8,8 @@ namespace TrabFinalLoud
 {
     internal abstract class PC : IObservador
     {
+
+
         protected int strenght;
         public float critChance, hp, maxHp;
         public Weapon weapon;
@@ -23,8 +25,7 @@ namespace TrabFinalLoud
             Elfo
         }
         public CharacterType charType;
-
-
+        
 
         public int Strenght
         {
@@ -39,9 +40,9 @@ namespace TrabFinalLoud
         }
 
 
-        public void attack(Enemy other)
+        public virtual void attack(Enemy other)
         {
-            if (other == null)
+           /* if (other == null)
             {
                 enemy = new Enemy(this);
                 other = enemy;
@@ -50,7 +51,8 @@ namespace TrabFinalLoud
             {
                 enemy = new Enemy(this);
                 other = enemy;
-            }
+            }*/
+            
             var random = new Random();
             if (random.Next(1, 100) < critChance)
             {
@@ -127,7 +129,7 @@ namespace TrabFinalLoud
             int index = 0;
             if (int.TryParse(input, out index))
             {
-                if (index > inventory.Count)
+                if (index >= inventory.Count )
                 {
                     Console.WriteLine("Escolha inválida");
                     return;
@@ -167,6 +169,15 @@ namespace TrabFinalLoud
                     inventory.RemoveAt(index);
                     return;
                 }
+                
+                if (inventory[index].type == Item.ItemType.HealthPotion)
+                {
+                    inventory[index] = new HealthPotion();
+                    HealthPotion potion = (HealthPotion)inventory[index];
+                    potion.use(this);
+                    inventory.RemoveAt(index);
+                    return;
+                }
 
                 inventory[index].use(this);
                 inventory.RemoveAt(index);
@@ -181,6 +192,7 @@ namespace TrabFinalLoud
         public void Avisar(IInimigoObservado personagem)
         {
             Console.WriteLine("O PC está ciente que o inimigo morreu💀");
+            // Spawnar Outro Inimigo
         }
 
         public void ShowStats()

@@ -10,34 +10,64 @@ namespace TrabFinalLoud
     {
         static void Main(string[] args)
         {
-            
+
+            int fightsWon = 0;
+            bool gameHappening = true;
+
             PC player = SelectClass();
             Weapon armaAtual = SelectWeapon(player);
-            player.PedirAcao();
-            
-            
-            // Sword espada = new Sword();
-            // Bow arcoDoSukuna = new Bow();
-            // espada.use(paladino);
-            // arcoDoSukuna.use(paladino);
+            //player.PedirAcao();
 
-            // //strenghtPotion.use(paladino);
+            while (gameHappening)
+            {
+                Console.WriteLine("Ate o momento voce venceu um total de " + fightsWon + " combates\n");
+                Batalha(player, ref gameHappening);
+                fightsWon++;
+            }
 
-            // CritGloves luvasDeCritico = new CritGloves();
-            // luvasDeCritico.equipItem(paladino);
-            // StrenghtGloves luvasDeDano = new StrenghtGloves();
-            // luvasDeDano.equipItem(paladino);
+            Console.WriteLine("Sua epica jornada na masmorra infelizmente chegou ao fim quando um oponente te decapitou, voce conseguiu derrotar " + fightsWon + " criaturas");
 
-            // goblin.ShowHp();
-            // paladino.attack(goblin);
-            // goblin.ShowHp();
-            // paladino.attack(goblin);
-            // goblin.ShowHp();
-            // if (goblin.GetHp() >= 0)
-            // {
-            //     paladino.attack(goblin);
-            //     goblin.ShowHp();
-            // }
+        }
+
+        //loop de batalha
+        static void Batalha(PC player, ref bool gameHappening)
+        {
+
+            Enemy inimigo = new Enemy(player);
+
+            var random = new Random();
+
+            //seleciona quem sera o proximo oponente com quem o player lutara
+            switch (random.Next(1, 3))
+            {
+                case 1:
+                    inimigo = new Goblin(player);
+                    break;
+
+                case 2:
+                    inimigo = new Orc(player);
+                    break;
+            }
+
+            bool inCombat = true;
+
+            while (inCombat)
+            {
+
+                player.PedirAcao();
+
+                if (inimigo.Hp <= 0) inCombat = false;
+
+                inimigo.Attack(player);
+
+
+                if (player.hp <= 0)
+                {
+                    inCombat = false;
+                    gameHappening = false;
+                }
+
+            }
 
         }
 
@@ -48,7 +78,8 @@ namespace TrabFinalLoud
             return input;
         }
 
-        static PC SelectClass(){
+        static PC SelectClass()
+        {
             Console.WriteLine("Escolha sua classe: ");
             Console.WriteLine("1 - Paladino \n2 - Elfo");
             PC player = null;
@@ -70,7 +101,8 @@ namespace TrabFinalLoud
 
         }
 
-        public static Weapon SelectWeapon(PC player){
+        public static Weapon SelectWeapon(PC player)
+        {
             Console.WriteLine("Escolha sua arma: ");
             Console.WriteLine("1 - Espada \n2 - Arco \n3 - Adaga");
             Weapon arma = null;
@@ -91,15 +123,14 @@ namespace TrabFinalLoud
                     return SelectWeapon(player);
             }
             Console.Clear();
-            if (player.equipWeapon(arma)){
+            if (player.equipWeapon(arma))
+            {
                 return arma;
             }
-            else{
+            else
+            {
                 return SelectWeapon(player);
             }
         }
-
-        
-
     }
 }

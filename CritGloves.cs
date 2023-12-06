@@ -18,7 +18,5 @@ namespace TrabFinalLoud
             player.critChance += critChance;
             Console.WriteLine("Luvas de Bonus Critico Equipado");
         }
-
-
     }
 }

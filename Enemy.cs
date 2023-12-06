@@ -13,9 +13,18 @@ namespace TrabFinalLoud
         }
         private IObservador player;
         protected int hp = 130, maxHp = 130;
+        public int dano = 10;
+        private int agilityBonus = 0;
+        private int agilityGoal = 4;
 
         public int Hp { get { return hp; } 
             set { hp = value; } 
+        }
+        public int Attack(PC player)
+        {
+            dano = 10;
+            player.hp -= dano;
+            return dano;
         }
         
         public int TakeDamage(int value)
@@ -36,7 +45,6 @@ namespace TrabFinalLoud
         }
 
         public void ShowHp(){
-            Console.WriteLine("O goblin agora está com " + hp + "/" + maxHp + " de vida❤️.");
         }
 
         public bool Died()
