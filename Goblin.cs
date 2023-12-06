@@ -40,7 +40,7 @@ namespace TrabFinalLoud{
             return hp;
         }
 
-        public void ShowHp(){
+        public override void ShowHp(){
             Console.WriteLine("O goblin agora está com " + hp + "/" + maxHp + " de vida❤️.");
         }
     }

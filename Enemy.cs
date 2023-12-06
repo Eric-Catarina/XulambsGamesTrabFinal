@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabFinalLoud
 {
-    class Enemy : IInimigoObservado
+    abstract class Enemy : IInimigoObservado
     {
         public Enemy(PC jogador){
             RegistrarObservador(jogador);
@@ -44,7 +44,9 @@ namespace TrabFinalLoud
             return hp;
         }
 
-        public void ShowHp(){
+        public virtual void ShowHp(){
+            Console.WriteLine("O inimigo agora está com " + hp + "/" + maxHp + " de vida❤️.");
+
         }
 
         public bool Died()

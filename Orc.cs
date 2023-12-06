@@ -14,7 +14,7 @@ namespace TrabFinalLoud{
             hp = maxHp;
             dano = 20;
         }
-        public void ShowHp(){
+        public override void ShowHp(){
             Console.WriteLine("O orc agora está com " + hp + "/" + maxHp + " de vida❤️.");
         }
     }

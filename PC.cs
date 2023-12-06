@@ -10,8 +10,8 @@ namespace TrabFinalLoud
     {
 
 
-        protected int strenght;
-        public float critChance, hp, maxHp;
+        public int strenght, hp, maxHp;
+        public float critChance;
         public Weapon weapon;
         public Enemy? enemy;
         protected string? id;
@@ -42,16 +42,16 @@ namespace TrabFinalLoud
 
         public virtual void attack(Enemy other)
         {
-           /* if (other == null)
+            if (other == null)
             {
-                enemy = new Enemy(this);
+                enemy = SpawnEnemy();
                 other = enemy;
             }
             if (other.GetHp() <= 0)
             {
-                enemy = new Enemy(this);
+                enemy = SpawnEnemy();
                 other = enemy;
-            }*/
+            }
             
             var random = new Random();
             if (random.Next(1, 100) < critChance)
@@ -64,6 +64,11 @@ namespace TrabFinalLoud
                 Console.WriteLine("Você causou " + strenght + " de dano");
                 other.TakeDamage(strenght);
             }
+            
+            TakeDamage(other.dano);
+
+            Console.WriteLine("Você está com " + hp + "/" + maxHp + " de vida❤️.");
+            //Console.WriteLine("Voce foi atacado, o inimigo te causou" + other.dano + " pontos de dano");
         }
 
         public string GetID()
@@ -262,6 +267,32 @@ namespace TrabFinalLoud
             {
                 Console.WriteLine(item.name + ", ");
             }
+        }
+        public void TakeDamage(int damage)
+        {
+            hp -= damage;
+            if (hp <= 0)
+            {
+                Console.WriteLine("Sua epica jornada na masmorra infelizmente chegou ao fim quando um oponente te decapitou");
+                Environment.Exit(0);
+            }
+        }
+        // Select random goblin or orc with 50% chance
+        public Enemy SpawnEnemy()
+        {
+            var random = new Random();
+            int enemyType = random.Next(1, 3);
+            if (enemyType == 1)
+            {
+                enemy = new Goblin(this);
+            }
+            else
+            {
+                enemy = new Orc(this);
+            }
+
+            //Console.WriteLine("Um " + enemy.type + " apareceu diante de ti");
+            return enemy;
         }
     }
 }

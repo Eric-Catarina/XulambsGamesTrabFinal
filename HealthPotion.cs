@@ -23,7 +23,7 @@ namespace TrabFinalLoud
         public void use(PC player)
         {
             Console.WriteLine("Poção de Cura usada, recuperou +30% de saude");
-            player.hp += 30f;
+            player.hp += 30;
         }
     }
 }
